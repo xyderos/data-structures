@@ -1,0 +1,28 @@
+{
+    "files.associations": {
+        "array": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "test_binary_tree.h": "c",
+        "test_doubly.h": "c",
+        "test_dictionary.h": "c",
+        "test_hash_map.h": "c",
+        "test_occurence_map.h": "c",
+        "test_occurences.h": "c",
+        "test_graph.h": "c",
+        "graph.h": "c",
+        "bellman_ford.h": "c",
+        "complement.h": "c",
+        "degrees_of_separation.h": "c",
+        "transisive_closure.h": "c",
+        "topological.h": "c",
+        "floyd_warshall.h": "c",
+        "eulerian_path.h": "c",
+        "eulerian_cycle.h": "c"
+    }
+}

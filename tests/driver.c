@@ -1,26 +1,15 @@
-#include <check.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "../src/graph/graph.h"
 #include "driver.h"
-
-static Suite *
-calculations_suite(void)
-{
-	Suite *s = NULL;
-	TCase *tc_core = NULL;
-
-	s = suite_create("calculation");
-	tc_core = tcase_create("core");
-
-	tcase_add_test(tc_core, TEST_ADDITION_SHOULD_BE_OKAY);
-	tcase_add_test(tc_core, TEST_MULTIPLICATION_SHOULD_BE_OKAY);
-
-	suite_add_tcase(s, tc_core);
-
-	return s;
-}
+#include "test_dictionary/test_dictionary.h"
+#include "test_doubly/test_doubly.h"
+#include "test_graph/test_graph.h"
+#include "test_hash_map/test_hash_map.h"
+#include "test_occurence_map/test_occurence_map.h"
+#include "test_occurences/test_occurences.h"
 
 int
 main(void)
@@ -30,8 +19,13 @@ main(void)
 	Suite *s = NULL;
 	SRunner *runner = NULL;
 
-	s = calculations_suite();
+	s = nth_suite();
 	runner = srunner_create(s);
+	srunner_add_suite(runner, map_suite());
+	srunner_add_suite(runner, table_suite());
+	srunner_add_suite(runner, doubly_linked_list_suite());
+	srunner_add_suite(runner, dictionary_suite());
+	srunner_add_suite(runner, graph_suite());
 
 	srunner_run_all(runner, CK_NORMAL);
 	no_failed = srunner_ntests_failed(runner);
